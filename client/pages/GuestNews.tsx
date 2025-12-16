@@ -47,7 +47,6 @@ export default function GuestNews() {
         <div className="space-y-6">
           <div className="flex flex-col gap-1 sm:gap-2">
             <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">Principais Notícias e Eventos</h2>
-            <p className="text-sm text-muted-foreground">Curso de Análise e Desenvolvimento de Sistemas</p>
           </div>
 
           {featuredEvent ? (
