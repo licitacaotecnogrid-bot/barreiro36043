@@ -73,12 +73,8 @@ const Projetos = () => {
     navigate("/eventos");
   };
 
-  const displayedProjetosPesquisa = isStudent
-    ? projetosPesquisadoCurso
-    : projetosPesquisa;
-  const displayedProjetosExtensao = isStudent
-    ? projetosExtensaodoCurso
-    : projetosExtensao;
+  const displayedProjetosPesquisa = projetosPesquisadoCurso;
+  const displayedProjetosExtensao = projetosExtensaodoCurso;
 
   return (
     <div className="space-y-6">
