@@ -223,12 +223,20 @@ export function ProjetosProvider({ children }: { children: ReactNode }) {
     );
   };
 
+  const normalizeCourse = (course: string | undefined): string => {
+    return course ? course.trim().toLowerCase() : "";
+  };
+
   const projetosPesquisadoCurso = currentUser?.curso
-    ? projetosPesquisa.filter((p) => p.curso === currentUser.curso)
+    ? projetosPesquisa.filter(
+        (p) => normalizeCourse(p.curso) === normalizeCourse(currentUser.curso),
+      )
     : projetosPesquisa;
 
   const projetosExtensaodoCurso = currentUser?.curso
-    ? projetosExtensao.filter((p) => p.curso === currentUser.curso)
+    ? projetosExtensao.filter(
+        (p) => normalizeCourse(p.curso) === normalizeCourse(currentUser.curso),
+      )
     : projetosExtensao;
 
   return (
