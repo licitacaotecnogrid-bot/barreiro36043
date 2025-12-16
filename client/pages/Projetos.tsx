@@ -73,12 +73,8 @@ const Projetos = () => {
     navigate("/eventos");
   };
 
-  const displayedProjetosPesquisa = isStudent
-    ? projetosPesquisadoCurso
-    : projetosPesquisa;
-  const displayedProjetosExtensao = isStudent
-    ? projetosExtensaodoCurso
-    : projetosExtensao;
+  const displayedProjetosPesquisa = projetosPesquisadoCurso;
+  const displayedProjetosExtensao = projetosExtensaodoCurso;
 
   return (
     <div className="space-y-6">
@@ -174,17 +170,19 @@ const Projetos = () => {
                       </div>
                     </CardContent>
                     <div className="space-y-2 border-t pt-3">
-                      <Button
-                        variant="default"
-                        size="sm"
-                        className="w-full h-8 text-xs"
-                        onClick={() =>
-                          handleTransformToEvent(projeto, "pesquisa")
-                        }
-                      >
-                        <Zap className="h-3 w-3 mr-1" />
-                        Transformar em Evento
-                      </Button>
+                      {!isStudent && (
+                        <Button
+                          variant="default"
+                          size="sm"
+                          className="w-full h-8 text-xs"
+                          onClick={() =>
+                            handleTransformToEvent(projeto, "pesquisa")
+                          }
+                        >
+                          <Zap className="h-3 w-3 mr-1" />
+                          Transformar em Evento
+                        </Button>
+                      )}
                       <div className="flex gap-2">
                         <Button
                           variant="ghost"
@@ -289,17 +287,19 @@ const Projetos = () => {
                       </div>
                     </CardContent>
                     <div className="space-y-2 border-t pt-3">
-                      <Button
-                        variant="default"
-                        size="sm"
-                        className="w-full h-8 text-xs"
-                        onClick={() =>
-                          handleTransformToEvent(projeto, "extensao")
-                        }
-                      >
-                        <Zap className="h-3 w-3 mr-1" />
-                        Transformar em Evento
-                      </Button>
+                      {!isStudent && (
+                        <Button
+                          variant="default"
+                          size="sm"
+                          className="w-full h-8 text-xs"
+                          onClick={() =>
+                            handleTransformToEvent(projeto, "extensao")
+                          }
+                        >
+                          <Zap className="h-3 w-3 mr-1" />
+                          Transformar em Evento
+                        </Button>
+                      )}
                       <div className="flex gap-2">
                         <Button
                           variant="ghost"
